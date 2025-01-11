@@ -12,8 +12,26 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
+            // campos que o Laravel já cria por padrão e são obrigatorios no cadastro
+
             $table->id();
             $table->string('name');
+
+
+            // campos que eu criei e são opcionais no cadastro;
+
+            $table->string('username')->nullable(); // Nullable e para permitir que o usuário não coloque
+            $table->text('image')->nullable();
+            $table->string('phone')->nullable();
+
+
+            // Regras de niveis de acesso de usuário
+            
+            $table->enum('role', ['admin', 'vendor', 'user'])->default('user');
+            $table->enum('status', ['active', 'inactive'])->default('active');
+
+
+            // Mais campos que o Laravel já cria por padrão e são obrigatorios no cadastro 
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
