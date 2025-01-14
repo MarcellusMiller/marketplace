@@ -1,9 +1,10 @@
 @extends('admin.layouts.master')
 
 @section('content')
-<section class="section">
+
+  <section class="section">
     <div class="section-header">
-      <h1>Painel de Controle</h1>
+      <h1>Painel de controle</h1>
     </div>
     <div class="row">
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
@@ -65,8 +66,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>                  
     </div>
-  
+    
   </section>
+
 @endsection
